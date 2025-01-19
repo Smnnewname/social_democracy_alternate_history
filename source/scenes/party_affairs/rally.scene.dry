@@ -36,12 +36,13 @@ on-arrival: rb_success = rb_strength*rb_militancy - sa_strength*sa_militancy; st
 go-to: rb_protect_win if rb_success >= 0; rb_protect_lose if rb_success < 0
 
 @rb_protect_win
+on-arrival: workers_spd += 3; 
 go-to: main_rally
 
 The Reichsbanner has successfully protected our rally against the SA! Our meeting can go ahead as usual.
 
 @rb_protect_lose
-on-arrival: workers_nsdap += 3; rb_strength -= 50
+on-arrival: workers_nsdap += 1; rb_strength -= 50
 
 Unfortunately, the Reichsbanner was not able to hold back the SA mob. The Nazis have won this show of strength.
 
@@ -81,12 +82,12 @@ Mass rallies are a common feature of social democratic life, especially in the l
 - @easy_discard
 
 @class_struggle
-on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 3*(1-dissent) if left_strength > reformist_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2;
+on-arrival: workers_spd += 10*(1-dissent); unemployed_spd += 1*(1-dissent) if left_strength > reformist_strength; workers_spd += 4*(1-dissent) if nationalization_progress > 0; unemployed_spd += 3*(1-dissent) if nationalization_progress > 0; left_strength += 5; left_dissent -= 5; old_middle_spd -= 3; new_middle_spd -= 2;
 
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. [? if nationalization_progress > 0 : Our achievements in nationalization have assisted our messaging. ?]
 
 @welfare
-on-arrival: workers_spd += 3*(1-dissent); workers_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labor_strength += 4; reformist_dissent -= 3; labor_dissent -= 3;
+on-arrival: workers_spd += 6*(1-dissent); workers_spd += 6*(1-dissent) if welfare > 0; unemployed_spd += 3*(1-dissent) if welfare > 0; unemployed_spd += 4*(1-dissent) if welfare > 1; reformist_strength += 3; labor_strength += 4; reformist_dissent -= 3; labor_dissent -= 3;
 
 The reformist message appeals to the organized workers, whose benefits are the accomplishments of social democracy. [? if welfare > 1 : Our achievements in expanding welfare have made this message more effective. ?]
 
@@ -110,12 +111,12 @@ Our speakers denounce the military establishment and all the spending entering t
 view-if: wtb_adopted = 1
 choose-if: return_to_normalcy = 0
 unavailable-subtitle: The economic crisis is largely over now, and the public is no longer interested in hearing about it.
-on-arrival: wtb_support += 1; workers_spd += 6*(1-dissent); unemployed_spd += 6*(1-dissent); rural_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent);
+on-arrival: wtb_support += 2; workers_spd += 10*(1-dissent); unemployed_spd += 15*(1-dissent); rural_spd += 3*(1-dissent); new_middle_spd += 3*(1-dissent); old_middle_spd += 3*(1-dissent);
 
 The WTB plan has become a popular rallying cry for our party. The workers are eager to go back to work, and that is exactly what the plan promises.
 
 
 @local
-on-arrival: workers_spd += 3*(1-dissent); old_middle_spd += 1*(1-dissent); new_middle_spd += 2*(1-dissent); unemployed_spd += 3*(1-dissent);
+on-arrival: workers_spd += 3*(1-dissent); old_middle_spd += 6*(1-dissent); new_middle_spd += 6*(1-dissent); unemployed_spd += 3*(1-dissent);
 
 Our speakers have gauged the mood and are speaking to the issues that seem to most affect the workers in this moment.
