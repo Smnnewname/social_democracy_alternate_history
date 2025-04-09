@@ -17,8 +17,8 @@ Q.rural = 25; // agriculture and forestry employment... but many of those are pr
 Q.unemployed = 8.6;
 Q.catholics = 30;
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.classes = ['workers', 'hindus', 'new_middle', 'rural', 'unemployed', 'muslims'];
+Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'inc', 'nsdap', 'other'];
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -27,25 +27,25 @@ Q.workers_kpd = 20;
 Q.workers_z = 5;
 Q.workers_ddp = 0;
 Q.workers_dvp = 0;
-Q.workers_dnvp = 5;
+Q.workers_inc = 5;
 Q.workers_nsdap = 0;
 Q.workers_other = 10;
 
-Q.old_middle_spd = 5;
-Q.old_middle_kpd = 0;
-Q.old_middle_z = 5;
-Q.old_middle_ddp= 10;
-Q.old_middle_dvp = 25;
-Q.old_middle_dnvp = 25;
-Q.old_middle_nsdap = 5;
-Q.old_middle_other = 10;
+Q.hindus_spd = 5;
+Q.hindus_kpd = 0;
+Q.hindus_z = 5;
+Q.hindus_ddp= 10;
+Q.hindus_dvp = 25;
+Q.hindus_inc = 25;
+Q.hindus_nsdap = 5;
+Q.hindus_other = 10;
 
 Q.new_middle_spd = 20;
 Q.new_middle_kpd = 0;
 Q.new_middle_z = 10;
 Q.new_middle_ddp= 25;
 Q.new_middle_dvp = 25;
-Q.new_middle_dnvp = 10;
+Q.new_middle_inc = 10;
 Q.new_middle_nsdap = 5;
 Q.new_middle_other = 0;
 
@@ -54,7 +54,7 @@ Q.rural_kpd = 0;
 Q.rural_z = 5;
 Q.rural_ddp= 5;
 Q.rural_dvp = 15;
-Q.rural_dnvp = 45;
+Q.rural_inc = 45;
 Q.rural_nsdap = 0;
 Q.rural_other = 10;
 
@@ -63,18 +63,18 @@ Q.unemployed_kpd = 25;
 Q.unemployed_z = 1;
 Q.unemployed_ddp = 0;
 Q.unemployed_dvp = 0;
-Q.unemployed_dnvp = 5;
+Q.unemployed_inc = 5;
 Q.unemployed_nsdap = 15;
 Q.unemployed_other = 9;
 
-Q.catholics_spd = 15;
-Q.catholics_kpd = 5;
-Q.catholics_z = 50;
-Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
-Q.catholics_dnvp = 5;
-Q.catholics_nsdap = 0;
-Q.catholics_other = 10;
+Q.muslims_spd = 15;
+Q.muslims_kpd = 5;
+Q.muslims_z = 50;
+Q.muslims_ddp = 0;
+Q.muslims_dvp = 5;
+Q.muslims_inc = 5;
+Q.muslims_nsdap = 0;
+Q.muslims_other = 10;
 !}
 go-to: election_algorithm
 set-jump: post_election
